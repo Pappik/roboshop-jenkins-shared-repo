@@ -15,7 +15,7 @@ def call() {
 
             stage('Unit Test') {
                 steps {
-                    echo 'unit test'
+                    echo "unit test"
                 }
             }
 
