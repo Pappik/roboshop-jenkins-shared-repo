@@ -16,7 +16,9 @@ def call() {
 
                 stage('Unit Test') {
                     steps {
-                        echo "unit test"
+                        script {
+                            common.unittests()
+                        }
                     }
                 }
 
