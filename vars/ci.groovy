@@ -31,9 +31,7 @@ def call() {
             }
 
             if( env.PUSH_CODE == true ) {
-                stage('Upload Artifact') {
-                    echo 'Upload artifacts'
-                }
+                common.artifact_Push()
             }
 
 
