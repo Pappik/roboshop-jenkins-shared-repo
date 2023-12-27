@@ -11,7 +11,7 @@ def call() {
             }
 
             stage('unit test') {
-                commom.unittests()
+                common.unittests()
             }
 
             stage('Quality Control') {
@@ -19,7 +19,7 @@ def call() {
 
             }
             stage('Upload Artifact') {
-                echo 'Upload'
+                echo 'Upload artifacts'
             }
         }
     }catch(Exception e) {
