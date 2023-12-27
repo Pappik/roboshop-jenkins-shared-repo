@@ -4,7 +4,7 @@ def call() {
 
             stage('CleanUp') {
                 cleanWs()
-                git branch: 'main', url: 'https://github.com/Pappik/${component}'
+                git branch: 'main', url: "https://github.com/Pappik/${component}"
             }
             stage('compile') {
                 common.compile()
@@ -15,7 +15,7 @@ def call() {
             }
 
             stage('Quality Control') {
-                sh 'sonar-scanner -Dsonar.host.url=http://172.31.86.114:9000 -Dsonar.login=admin -Dsonar.password=admin123 -Dsonar.projectKey=${component}'
+                sh "sonar-scanner -Dsonar.host.url=http://172.31.86.114:9000 -Dsonar.login=admin -Dsonar.password=admin123 -Dsonar.projectKey=${component}"
 
             }
             stage('Upload Artifact') {
