@@ -23,6 +23,7 @@ def call() {
             }
             stage('compile') {
                 common.compile()
+                sh 'echo env'
             }
 
             stage('unit test') {
@@ -41,10 +42,6 @@ def call() {
                 }
 
             }
-
-
-
-
         }
     }catch(Exception e) {
         common.email("failed")
