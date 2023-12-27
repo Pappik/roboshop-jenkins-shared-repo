@@ -31,5 +31,5 @@ def artifact_Push() {
     if (app_lang == "nodejs") {
        sh "zip -r  ${component}-${TAG_NAME}.zip nodule_modules server.js VERSION ${extrafiles}"
     }
-    curl -v -u admin:admin123 --upload-file ${component}-${TAG_NAME}.zip http://172.31.88.150:8081/repository/${component}/${component}-${TAG_NAME}.zip
+    sh "curl -v -u admin:admin123 --upload-file ${component}-${TAG_NAME}.zip http://172.31.88.150:8081/repository/${component}/${component}-${TAG_NAME}.zip"
 }
