@@ -4,7 +4,7 @@ def call() {
 
             stage('CleanUp') {
                 cleanWs()
-                git branch: 'main', url: 'https://github.com/Pappik/cart'
+                git branch: 'main', url: 'https://github.com/Pappik/${component}'
             }
             stage('compile') {
                 common.compile()
