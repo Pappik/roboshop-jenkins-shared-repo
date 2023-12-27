@@ -23,7 +23,7 @@ def call() {
             }
             stage('compile') {
                 common.compile()
-                sh 'echo env'
+                sh "env"
             }
 
             stage('unit test') {
