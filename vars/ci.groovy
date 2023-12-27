@@ -10,7 +10,7 @@ def call() {
 
     if(!env.TAG_NAME) {
         env.PUSH_CODE = "false"
-    }else {
+    } else {
         env.PUSH_CODE = "true"
     }
 
@@ -35,15 +35,14 @@ def call() {
                 sh "echo sonar scan"
 
             }
-
-            stage('Push Code to Artifact') {
-                if( env.PUSH_CODE == true ) {
+            if(env.PUSH_CODE == "true") {
+                stage('Push Code to Artifact') {
                     common.artifact_Push()
                 }
+            }
 
             }
-        }
-    }catch(Exception e) {
+        } catch(Exception e) {
         common.email("failed")
     }
 }
