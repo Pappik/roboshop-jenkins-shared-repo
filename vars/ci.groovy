@@ -35,9 +35,14 @@ def call() {
 
             }
 
-            if( env.PUSH_CODE == true ) {
-                common.artifact_Push()
+            stage('Push Code to Artifact') {
+                if( env.PUSH_CODE == true ) {
+                    common.artifact_Push()
+                }
+
             }
+
+
 
 
         }
