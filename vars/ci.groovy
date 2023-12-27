@@ -15,7 +15,7 @@ def call() {
             }
 
             stage('Quality Control') {
-                sh "sonar-scanner -Dsonar.host.url=http://172.31.86.114:9000 -Dsonar.login=admin -Dsonar.password=admin123 -Dsonar.projectKey=${component}"
+                sh "sonar-scanner -Dsonar.host.url=http://172.31.86.114:9000 -Dsonar.login=admin -Dsonar.password=admin123 -Dsonar.projectKey=${component} ${SONAR_EXTRA_OPTS}"
 
             }
             stage('Upload Artifact') {
