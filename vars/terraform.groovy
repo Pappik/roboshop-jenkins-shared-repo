@@ -13,6 +13,7 @@ def call() {
 
         parameters {
             string(name: 'INFRA_ENV', defaultValue: '', description: 'Enter env like dev or prod')
+            choice(name: 'ACTION', choices: ['apply', 'destroy'], description: 'Choose apply or destroy')
         }
 
         stages {
