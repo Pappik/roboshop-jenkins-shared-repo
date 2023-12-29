@@ -26,16 +26,9 @@ def call() {
             }
 
 
-            stage('Terraform Apply') {
+            stage('Terraform ${ACTION}') {
                 steps {
-                    sh 'terraform apply -auto-approve -var-file=env-${INFRA_ENV}/main.tfvars'
-
-                }
-            }
-
-            stage('Terraform Destroy') {
-                steps {
-                    sh 'terraform destroy -auto-approve -var-file=env-${INFRA_ENV}/main.tfvars'
+                    sh 'terraform ${ACTION} -auto-approve -var-file=env-${INFRA_ENV}/main.tfvars'
 
                 }
             }
