@@ -33,6 +33,14 @@ def call() {
                 }
             }
 
+            stage('Terraform Destroy') {
+                steps {
+                    sh 'terraform destroy -auto-approve -var-file=env-${INFRA_ENV}/main.tfvars'
+
+                }
+            }
+
+
 
         }
         post {
