@@ -30,7 +30,7 @@ def artifact_Push() {
     sh "echo ${TAG_NAME} >VERSION"
 
     if (app_lang == "nodejs") {
-       sh "zip -r  ${component}-${TAG_NAME}.zip nodule_modules server.js VERSION ${extrafiles}"
+       sh "zip -r  ${component}-${TAG_NAME}.zip nodule_modules package.json server.js VERSION ${extrafiles}"
     }
 
     if (app_lang == "nginx" || app_lang == "python") {
