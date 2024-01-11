@@ -38,7 +38,7 @@ def artifact_Push() {
     }
 
     if (app_lang == "maven") {
-        sh "zip -r  ${component}-${TAG_NAME}.zip ${component}.jar VERSION ${extrafiles}"
+        sh "zip -r  ${component}-${TAG_NAME}.zip ${component}.jar VERSION pom.xml ${extrafiles}"
     }
 
     sh "curl -v -u admin:admin123 --upload-file ${component}-${TAG_NAME}.zip http://172.31.88.150:8081/repository/${component}/${component}-${TAG_NAME}.zip"
