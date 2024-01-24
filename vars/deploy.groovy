@@ -3,8 +3,8 @@ def call() {
         agent any
 
         string(name: 'APP_ENV', defaultValue: '', description: 'Enter env like dev or prod')
-        choice(name: 'COMPONENT',defaultValue: '', description: 'Enter component name')
-        choice(name: 'APP_VERSION',defaultValue: '', description: 'Enter app version to deploy')
+        string(name: 'COMPONENT',defaultValue: '', description: 'Enter component name')
+        string(name: 'APP_VERSION',defaultValue: '', description: 'Enter app version to deploy')
 
 
         stages {
